@@ -1,46 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Personal</title>
- <link rel="stylesheet" href="estilos/css1.css">
+    <title>Contacto | Martina Sol Sama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        h1{
-            color: #377098;
-        }
-        p{
-            color: #567c96;
-            font-family:Verdana, Geneva, Tahoma, sans-serif
+        :root {
+            --bg-crema: #F9F7F2;
+            --accent-moca: #A68B6D;
+            --text-dark: #2D2A26;
+            --border-soft: #E5E1D8;
         }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-crema);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-moca);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .contact-method {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-soft);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            padding-left: 1rem;
+        }
+
+        .input-minimal {
+            background: transparent;
+            border-bottom: 1px solid var(--border-soft);
+            padding: 1rem 0;
+            width: 100%;
+            font-weight: 300;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-minimal:focus {
+            outline: none;
+            border-color: var(--accent-moca);
+        }
+
+        .btn-submit {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 1.2rem;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            margin-top: 2rem;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--accent-moca);
+            letter-spacing: 0.3em;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-   <header>
-<h1>Mi Sitio Personal</h1>
-<nav>
-    <ul>
-        <li>
-            <a href="index.html">inicio</a>
-        </li>
-        <li>
-            <a href="intereses.html">intereses</a>
-        </li>
-        <li>
-            <a href="contacto.html">contacto</a>
-        </li>
-    </ul>
-</nav>
-   </header>
-   <main>
-<h2>
-    Contactame
-</h2>
-<a href="mailto:msama@uade.edu.ar">msama@uade.edu.ar<a>
-   </main>
-   <footer>
-<p>Todos los derechos reservados</p>
-   </footer>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-[#F9F7F2]/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-xl tracking-[0.25em] font-light italic">M.S.S</div>
+            
+            <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.2em] font-medium">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="intereses.html" class="nav-link">Intereses</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </div>
+
+            <div class="md:hidden text-xs uppercase tracking-widest">Menu</div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="pt-40 pb-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-24 items-start fade-in">
+                
+                <!-- Columna Izquierda: Mensaje y Datos -->
+                <div>
+                    <span class="text-xs uppercase tracking-[0.4em] text-stone-400 mb-6 block italic">Hablemos</span>
+                    <h1 class="text-5xl md:text-7xl mb-12 leading-tight">¿Buscás una conversación <span class="italic font-light text-stone-400">cercana?</span></h1>
+                    
+                    <div class="mt-20 space-y-4">
+                        <div class="contact-method">
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-stone-400 block mb-2">WhatsApp</span>
+                            <a href="https://wa.me/541136001535" class="text-2xl font-light hover:text-stone-500 transition-colors">11-3600-1535</a>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-stone-400 block mb-2">Email Profesional</span>
+                            <a href="mailto:martisolsama@gmail.com" class="text-2xl font-light hover:text-stone-500 transition-colors">martisolsama@gmail.com</a>
+                        </div>
+
+                        <div class="contact-method">
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-stone-400 block mb-2">Trayectoria</span>
+                            <a href="#" class="text-2xl font-light hover:text-stone-500 transition-colors">LinkedIn @MartinaSama</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Formulario Minimalista -->
+                <div class="bg-white p-10 md:p-16 border border-stone-200 shadow-sm">
+                    <h2 class="text-xs uppercase tracking-[0.4em] text-stone-400 mb-12">Enviar un mensaje</h2>
+                    
+                    <form action="#" class="space-y-8">
+                        <div>
+                            <label class="text-[10px] uppercase tracking-widest text-stone-400">Nombre Completo</label>
+                            <input type="text" class="input-minimal" placeholder="Ej. Juan Pérez">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[10px] uppercase tracking-widest text-stone-400">Correo Electrónico</label>
+                            <input type="email" class="input-minimal" placeholder="nombre@ejemplo.com">
+                        </div>
+
+                        <div>
+                            <label class="text-[10px] uppercase tracking-widest text-stone-400">Asunto</label>
+                            <input type="text" class="input-minimal" placeholder="Colaboración, Proyecto, Consulta...">
+                        </div>
+
+                        <div>
+                            <label class="text-[10px] uppercase tracking-widest text-stone-400">Mensaje</label>
+                            <textarea rows="4" class="input-minimal" placeholder="Escribe aquí tu mensaje..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-stone-100 border-t border-stone-200 px-6 text-center">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-stone-400 text-[10px] tracking-[0.3em] uppercase">
+            <p>Martina Sol Sama © 2024</p>
+            <div class="flex space-x-8 mt-4 md:mt-0">
+                <span>Buenos Aires</span>
+                <span class="text-stone-300">|</span>
+                <span>Argentina</span>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
