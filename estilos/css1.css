@@ -1,17 +1,406 @@
-h1{
-    color: #8eb7d5;
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* VARIABLES */
+
+:root {
+
+  --bg-crema: #F9F7F2;
+  --accent-moca: #A68B6D;
+  --text-dark: #2D2A26;
+  --text-light: #6B6661;
+  --border-soft: #E5E1D8;
 
 }
-p{
-    color: #3d7095;
-    font-family: Arial, Helvetica, sans-serif;
+
+/* GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-crema);
+  color: var(--text-dark);
 
 }
-body{
-    background-color: #d8e1e9;
+
+/* TIPOGRAFIAS */
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
 }
-header{
-    background-color: #accee6;
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVBAR */
+
+.navbar {
+
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 60px;
+
+  border-bottom: 1px solid var(--border-soft);
+
+  background-color: rgba(249,247,242,0.9);
+
+}
+
+.logo {
+
+  letter-spacing: 4px;
+  font-size: 18px;
+
+}
+
+.menu {
+
+  display: flex;
+  gap: 40px;
+
+}
+
+.menu a {
+
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  transition: 0.3s;
+
+}
+
+.menu a:hover {
+
+  color: var(--accent-moca);
+
+}
+
+/* HERO */
+
+.hero {
+
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  padding: 80px;
+
+  gap: 60px;
+
+}
+
+.hero-text h1 {
+
+  font-size: 72px;
+  margin: 20px 0;
+
+  line-height: 1.1;
+
+}
+
+.hero-text p {
+
+  color: var(--text-light);
+  line-height: 1.8;
+
+  margin-bottom: 40px;
+
+}
+
+.subtitle {
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+
+  color: var(--text-light);
+
+}
+
+.italic {
+  font-style: italic;
+}
+
+.hero-image img {
+
+  width: 100%;
+  height: 700px;
+
+  object-fit: cover;
+
+}
+
+/* BOTON */
+
+.btn-primary {
+
+  background-color: var(--text-dark);
+  color: white;
+
+  padding: 18px 40px;
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  font-size: 12px;
+
+  transition: 0.3s;
+
+}
+
+.btn-primary:hover {
+
+  background-color: var(--accent-moca);
+
+}
+
+/* SECCIONES */
+
+.section {
+
+  padding: 120px 80px;
+
+}
+
+.container-grid {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+}
+
+.section-title {
+
+  margin-bottom: 40px;
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  font-size: 12px;
+
+  color: var(--text-light);
+
+}
+
+/* EXPERIENCIA */
+
+.job {
+
+  margin-bottom: 40px;
+
+}
+
+.job span {
+
+  font-size: 12px;
+  color: var(--text-light);
+
+}
+
+.job h3 {
+
+  margin: 10px 0;
+
+}
+
+/* SKILLS */
+
+.skills-box {
+
+  background-color: #F5F3EE;
+
+  padding: 50px;
+
+  border: 1px solid var(--border-soft);
+
+}
+
+.skills-list {
+
+  list-style: none;
+
+}
+
+.skills-list li {
+
+  margin-bottom: 20px;
+
+}
+
+/* INTERESES */
+
+.interests-section {
+
+  padding: 120px 80px;
+
+}
+
+.section-center {
+
+  text-align: center;
+  margin-bottom: 80px;
+
+}
+
+.cards-grid {
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 30px;
+
+}
+
+.interest-card {
+
+  border: 1px solid var(--border-soft);
+
+  padding: 40px;
+
+  transition: 0.3s;
+
+}
+
+.interest-card:hover {
+
+  transform: translateY(-5px);
+
+  background-color: white;
+
+}
+
+.emoji {
+
+  font-size: 40px;
+  margin-bottom: 20px;
+
+}
+
+/* CONTACTO */
+
+.contact-section {
+
+  min-height: 100vh;
+
+  background-color: var(--text-dark);
+
+  color: white;
+
+  padding: 120px 80px;
+
+}
+
+.contact-container {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+}
+
+.contact-info h1 {
+
+  font-size: 70px;
+
+  margin-bottom: 60px;
+
+}
+
+.contact-item {
+
+  margin-bottom: 40px;
+
+}
+
+.contact-item span {
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+  color: #999;
+
+}
+
+.contact-form {
+
+  background-color: rgba(255,255,255,0.05);
+
+  padding: 50px;
+
+}
+
+.contact-form form {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.contact-form input,
+.contact-form textarea {
+
+  background: transparent;
+
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+
+  padding: 20px 0;
+
+  margin-bottom: 30px;
+
+  color: white;
+
+  font-size: 16px;
+
+}
+
+.contact-form button {
+
+  background-color: var(--accent-moca);
+
+  border: none;
+
+  color: white;
+
+  padding: 18px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.contact-form button:hover {
+
+  background-color: white;
+  color: black;
+
 }

@@ -1,44 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Personal</title>
- <link rel="stylesheet" href="estilos/css1.css">
+    <title>Intereses | Martina Sol Sama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        h1{
-            color: #377098;
-        }
-        p{
-            color: #567c96;
-            font-family:Verdana, Geneva, Tahoma, sans-serif
+        :root {
+            --bg-crema: #F9F7F2;
+            --accent-moca: #A68B6D;
+            --text-dark: #2D2A26;
+            --border-soft: #E5E1D8;
         }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-crema);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-moca);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .interest-card {
+            background-color: transparent;
+            border: 1px solid var(--border-soft);
+            padding: 3rem;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .interest-card:hover {
+            background-color: white;
+            border-color: var(--accent-moca);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(166, 139, 109, 0.08);
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-   <header>
-<h1>Mi Sitio Personal</h1>
-<nav>
-    <ul>
-        <li>
-            <a href="index.html">inicio</a>
-        </li>
-        <li>
-            <a href="intereses.html">intereses</a>
-        </li>
-        <li>
-            <a href="contacto.html">contacto</a>
-        </li>
-    </ul>
-</nav>
-   </header>
-   <main>
-<h2>Intereses</h2>
-<p>Me interesa entrenar en el gimnasio y hacer danza.</p>
-   </main>
-   <footer>
-<p>Todos los derechos reservados</p>
-   </footer>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-[#F9F7F2]/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-xl tracking-[0.25em] font-light italic">M.S.S</div>
+            
+            <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.2em] font-medium">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="intereses.html" class="nav-link">Intereses</a>
+                <a href="contacto.html" class="nav-link opacity-50 cursor-not-allowed">Contacto</a>
+            </div>
+
+            <div class="md:hidden text-xs uppercase tracking-widest">Menu</div>
+        </div>
+    </nav>
+
+    <!-- Header de Sección -->
+    <header class="pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto text-center fade-in">
+            <span class="text-xs uppercase tracking-[0.4em] text-stone-400 mb-6 block italic">Curiosidad & Estilo de Vida</span>
+            <h1 class="text-5xl md:text-7xl mb-6">Mis <span class="italic font-light">Intereses.</span></h1>
+            <div class="w-20 h-[1px] bg-stone-300 mx-auto mt-10"></div>
+        </div>
+    </header>
+
+    <!-- Cuadrícula de Intereses -->
+    <section class="pb-40 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 fade-in" style="animation-delay: 0.2s;">
+                
+                <!-- Interés 1 -->
+                <div class="interest-card min-h-[350px]">
+                    <div>
+                        <div class="text-4xl mb-8">🏃‍♀️</div>
+                        <h2 class="text-3xl mb-6 serif">Entrenamiento</h2>
+                        <p class="text-stone-500 leading-relaxed font-light text-lg">
+                            Más que una rutina, es mi forma de mantener la disciplina y el enfoque. Disfruto del desafío físico como una herramienta para la superación constante y la claridad mental.
+                        </p>
+                    </div>
+                    <div class="mt-10 text-[10px] uppercase tracking-[0.3em] text-stone-400">Disciplina / Bienestar</div>
+                </div>
+
+                <!-- Interés 2 -->
+                <div class="interest-card min-h-[350px]">
+                    <div>
+                        <div class="text-4xl mb-8">👩‍🍳</div>
+                        <h2 class="text-3xl mb-6 serif">Cocina & Creatividad</h2>
+                        <p class="text-stone-500 leading-relaxed font-light text-lg">
+                            Experimentar con recetas es mi espacio de desconexión creativa. Me permite explorar nuevas texturas y sabores, aplicando la misma curiosidad que uso en mi carrera profesional.
+                        </p>
+                    </div>
+                    <div class="mt-10 text-[10px] uppercase tracking-[0.3em] text-stone-400">Exploración / Arte Diario</div>
+                </div>
+
+                <!-- Interés 3 -->
+                <div class="interest-card min-h-[350px]">
+                    <div>
+                        <div class="text-4xl mb-8">🌿</div>
+                        <h2 class="text-3xl mb-6 serif">Aire Libre & Roma</h2>
+                        <p class="text-stone-500 leading-relaxed font-light text-lg">
+                            Valoro profundamente los momentos de paz caminando al aire libre con mi mascota, Roma. Es mi cable a tierra y mi forma de conectar con la naturaleza en la ciudad.
+                        </p>
+                    </div>
+                    <div class="mt-10 text-[10px] uppercase tracking-[0.3em] text-stone-400">Conexión / Naturaleza</div>
+                </div>
+
+                <!-- Interés 4 -->
+                <div class="interest-card min-h-[350px]">
+                    <div>
+                        <div class="text-4xl mb-8">📈</div>
+                        <h2 class="text-3xl mb-6 serif">Tendencias & Marketing</h2>
+                        <p class="text-stone-500 leading-relaxed font-light text-lg">
+                            Me apasiona analizar cómo cambian las conductas de consumo. Siempre estoy buscando nuevas herramientas y tendencias digitales para seguir creciendo en el mundo de la comercialización.
+                        </p>
+                    </div>
+                    <div class="mt-10 text-[10px] uppercase tracking-[0.3em] text-stone-400">Aprendizaje / Estrategia</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-[#2D2A26] px-6 text-white/40">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] tracking-[0.4em] uppercase">
+            <p>M.S.S Portfolio © 2024</p>
+            <div class="flex space-x-10 mt-8 md:mt-0">
+                <a href="index.html" class="hover:text-white transition-colors">Volver al Inicio</a>
+                <a href="contacto.html" class="hover:text-white opacity-40">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

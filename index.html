@@ -1,46 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Personal</title>
-    <link rel="stylesheet" href="estilos/css1.css">
+    <title>Martina Sol Sama | Portafolio Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        h1{
-            color: #377098;
-        }
-        p{
-            color: #567c96;
-            font-family:Verdana, Geneva, Tahoma, sans-serif
+        :root {
+            --bg-crema: #F9F7F2;
+            --accent-moca: #A68B6D;
+            --text-dark: #2D2A26;
+            --text-light: #6B6661;
+            --border-soft: #E5E1D8;
         }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-crema);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-moca);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 0.85rem 2.5rem;
+            border-radius: 1px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-moca);
+        }
+
+        .skill-dot {
+            height: 6px;
+            width: 6px;
+            background-color: var(--accent-moca);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-   <header>
-<h1>Mi Sitio Personal</h1>
-<nav>
-    <ul>
-        <li>
-            <a href="index.html">inicio</a>
-        </li>
-        <li>
-            <a href="intereses.html">intereses</a>
-        </li>
-        <li>
-            <a href="contacto.html">contacto</a>
-        </li>
-    </ul>
-</nav>
-   </header>
-   <main>
-<p>Me llamo Martina Sama. Soy estudiante de Marketing.</p>
-<p>Tengo 20 años.</p>
-<img src="img/foto.png" alt="Mi infografía">
-    </ul>
-   </main>
-   <footer>
-<p>Todos los derechos reservados</p>
-   </footer>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-[#F9F7F2]/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-xl tracking-[0.25em] font-light">MARTINA SOL SAMA</div>
+            
+            <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.2em] font-medium">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="intereses.html" class="nav-link opacity-50 cursor-not-allowed">Intereses</a>
+                <a href="contacto.html" class="nav-link opacity-50 cursor-not-allowed">Contacto</a>
+            </div>
+
+            <div class="md:hidden">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M4 8h16M4 16h16"/>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section / Inicio -->
+    <section id="inicio" class="min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center fade-in">
+            <div class="md:col-span-7">
+                <span class="text-xs uppercase tracking-[0.4em] text-stone-500 mb-6 block italic">Presentación Profesional</span>
+                <h1 class="text-6xl md:text-8xl leading-[1.1] mb-10">Crear valor con <span class="italic">propósito.</span></h1>
+                <p class="text-lg text-stone-600 mb-10 max-w-xl leading-relaxed font-light">
+                    Estudiante de 4to año en la Licenciatura en Comercialización en la UADE. Me especializo en la optimización de procesos y generación de contenido estratégico para marcas dinámicas que buscan impacto real.
+                </p>
+                <div class="flex space-x-6 items-center">
+                    <a href="mailto:martisolsama@gmail.com" class="btn-primary inline-block">Contratar</a>
+                    <span class="text-[10px] uppercase tracking-widest text-stone-400">Buenos Aires, AR</span>
+                </div>
+            </div>
+            <div class="md:col-span-5 relative">
+                <div class="aspect-[3/4] bg-stone-200 overflow-hidden grayscale brightness-110">
+                    <img src="img/infografia personal.png" alt="Retrato Profesional Martina Sol Sama" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-[#A68B6D] text-white p-8 hidden md:block">
+                    <p class="text-xs uppercase tracking-widest leading-loose">Estrategia<br>& Comunicación</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resumen de Trayectoria -->
+    <section class="py-32 border-t border-stone-200 bg-stone-50/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-24">
+                <div>
+                    <h2 class="text-xs uppercase tracking-[0.4em] text-stone-400 mb-12">Trayectoria Reciente</h2>
+                    <div class="space-y-16">
+                        <div class="group">
+                            <span class="text-xs font-medium text-stone-400 mb-2 block">2025 — PRESENTE</span>
+                            <h3 class="text-2xl mb-2">Pasante de Comunicación</h3>
+                            <p class="serif italic text-stone-500 mb-4">ArgentinaTech</p>
+                        </div>
+                        <div class="group">
+                            <span class="text-xs font-medium text-stone-400 mb-2 block">2025 — 2026</span>
+                            <h3 class="text-2xl mb-2">Pasante de Marketing</h3>
+                            <p class="serif italic text-stone-500 mb-4">Agencia Picante</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-12 border border-stone-200">
+                    <h2 class="text-xs uppercase tracking-[0.4em] text-stone-400 mb-12">Perfil Ejecutivo</h2>
+                    <div class="grid grid-cols-1 gap-6 mb-12">
+                        <div class="flex items-center text-sm tracking-wide"><span class="skill-dot"></span> Comunicación Efectiva</div>
+                        <div class="flex items-center text-sm tracking-wide"><span class="skill-dot"></span> Trabajo en Equipo</div>
+                        <div class="flex items-center text-sm tracking-wide"><span class="skill-dot"></span> Pensamiento Crítico</div>
+                    </div>
+                    
+                    <div class="pt-12 border-t border-stone-200">
+                        <p class="text-stone-500 text-sm leading-relaxed font-light italic">
+                            "Busco desarrollarme profesionalmente y sumar experiencia aportando mi capacidad de organización y compromiso, enfocándome siempre en la generación de valor."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="py-12 bg-[#2D2A26] px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-stone-500 text-[10px] tracking-[0.3em] uppercase">
+            <p>Martina Sol Sama © 2024</p>
+            <div class="flex space-x-8 mt-4 md:mt-0">
+                <a href="mailto:martisolsama@gmail.com" class="hover:text-white transition-colors">Email</a>
+                <a href="https://wa.me/541136001535" class="hover:text-white transition-colors">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
